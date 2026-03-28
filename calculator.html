@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-053Z64N82F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-053Z64N82F');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discharge Bar Calculator -- When Can I File Again? | dischargebar.org</title>
+<meta name="description" content="Free interactive calculator. Enter your prior filing date and chapter to find your earliest eligible date for a new bankruptcy discharge.">
+<meta name="keywords" content="discharge bar calculator, when can I file again, bankruptcy eligibility date, filing date calculator">
+<link rel="canonical" href="https://dischargebar.org/calculator.html">
+
+<meta property="og:title" content="Discharge Bar Calculator -- When Can I File Again?">
+<meta property="og:description" content="Free interactive calculator. Enter your prior filing date and chapter to find your earliest eligible date for a new bankruptcy discharge.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://dischargebar.org/calculator.html">
+<meta property="og:site_name" content="dischargebar.org">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Discharge Bar Calculator -- When Can I File Again?">
+<meta name="twitter:description" content="Free interactive calculator. Enter your prior filing date and chapter to find your earliest eligible date for a new bankruptcy discharge.">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#0d1117">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Open Bankruptcy Project",
+  "url": "https://1328f.org",
+  "description": "Free, open-source bankruptcy information. Real information, no strings."
+}
+</script>
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "When can I file bankruptcy again after a discharge?",
+     "acceptedAnswer": {"@type": "Answer", "text": "It depends on which chapter you filed and which chapter you want to file next. The waiting periods range from 2 years (Ch.13 to Ch.13) to 8 years (Ch.7 to Ch.7), measured from filing date to filing date."}},
+    {"@type": "Question", "name": "Is the waiting period measured from the discharge date?",
+     "acceptedAnswer": {"@type": "Answer", "text": "No. All discharge bars are measured from the filing date of the prior case to the filing date of the new case -- not from the date the discharge was entered."}},
+    {"@type": "Question", "name": "Can I file again if my case was dismissed?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Yes. Discharge bars only apply when you received a discharge. If your case was dismissed, you may face a 180-day filing bar under Section 109(g) instead."}}
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-muted: #9eaab6;
+    --accent: #58a6ff;
+    --green: #3fb950;
+    --red: #f85149;
+    --yellow: #e3a835;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; z-index: 9999; padding: 1rem; background: #238636; color: #fff; font-weight: 600; text-decoration: none; }
+  .skip-link:focus { position: fixed; top: 10px; left: 10px; width: auto; height: auto; overflow: visible; }
+  nav { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0.75rem 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+  nav .site-name { color: #f0f6fc; font-weight: 700; font-size: 1.1rem; text-decoration: none; }
+  nav .site-name:hover { text-decoration: none; color: var(--accent); }
+  .nav-links { display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center; }
+  .nav-links a { color: var(--text-muted); font-size: 0.9rem; }
+  .nav-links a:hover { color: var(--accent); text-decoration: none; }
+  .nav-links a.active { color: var(--accent); font-weight: 600; }
+  .hamburger { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; padding: 0.25rem; }
+  header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 3rem 2rem; text-align: center; }
+  header h1 { color: #f0f6fc; font-size: 2rem; margin-bottom: 0.75rem; }
+  header h1 .accent { color: var(--accent); }
+  header .subtitle { color: var(--text-muted); font-size: 1.05rem; max-width: 700px; margin: 0 auto; }
+  .breadcrumb { max-width: 820px; margin: 1rem auto 0; padding: 0 1.5rem; font-size: 0.85rem; color: var(--text-muted); }
+  .breadcrumb a { color: var(--text-muted); }
+  .breadcrumb a:hover { color: var(--accent); }
+  main { max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .content-section { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 2rem; margin-bottom: 1.5rem; }
+  .content-section h2 { color: #f0f6fc; font-size: 1.3rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+  .content-section h3 { color: #f0f6fc; font-size: 1.1rem; margin: 1.25rem 0 0.75rem; }
+  .content-section p { color: var(--text); margin-bottom: 0.75rem; font-size: 0.95rem; }
+  .content-section p:last-child { margin-bottom: 0; }
+  .content-section ul, .content-section ol { margin: 0.75rem 0 0.75rem 1.5rem; color: var(--text); font-size: 0.95rem; }
+  .content-section li { margin-bottom: 0.4rem; }
+  .content-section table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+  .content-section th, .content-section td { padding: 0.6rem 0.75rem; text-align: left; border-bottom: 1px solid var(--border); }
+  .content-section th { color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+  .green-box { background: #21262d; border-left: 3px solid var(--green); padding: 1rem 1.25rem; border-radius: 0 6px 6px 0; margin: 1rem 0; }
+  .green-box p { margin-bottom: 0.5rem; }
+  .green-box p:last-child { margin-bottom: 0; }
+  .yellow-box { background: #21262d; border-left: 3px solid var(--yellow); padding: 1rem 1.25rem; border-radius: 0 6px 6px 0; margin: 1rem 0; }
+  .yellow-box p { margin-bottom: 0.5rem; }
+  .yellow-box p:last-child { margin-bottom: 0; }
+  .warning-box { background: #21262d; border-left: 3px solid var(--red); padding: 1rem 1.25rem; border-radius: 0 6px 6px 0; margin: 1rem 0; }
+  .warning-box p { margin-bottom: 0.5rem; }
+  .warning-box p:last-child { margin-bottom: 0; }
+  .cta-box { background: var(--surface); border: 2px solid var(--accent); border-radius: 8px; padding: 2rem; margin: 2rem 0; text-align: center; }
+  .cta-box h3 { color: #f0f6fc; font-size: 1.2rem; margin-bottom: 0.75rem; }
+  .cta-box p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem; }
+  .cta-box .cta-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+  .cta-box .cta-links a { display: inline-block; padding: 0.6rem 1.5rem; border-radius: 6px; font-weight: 600; font-size: 0.95rem; transition: background 0.2s; }
+  .cta-links .primary-btn { background: #238636; color: #fff; }
+  .cta-links .primary-btn:hover { background: #2ea043; text-decoration: none; }
+  .cta-links .secondary-btn { background: var(--border); color: var(--text); }
+  .cta-links .secondary-btn:hover { background: #484f58; text-decoration: none; }
+  .network-footer { background: var(--surface); border-top: 1px solid var(--border); padding: 2rem; text-align: center; margin-top: 3rem; }
+  .network-footer p { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem; }
+  .network-footer .links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 0.75rem; }
+  .network-footer .links a { color: var(--text-muted); font-size: 0.85rem; }
+  .network-footer .links a:hover { color: var(--accent); }
+  .network-footer .disclaimer { margin-top: 1rem; font-size: 0.75rem; color: var(--text-muted); }
+  @media (max-width: 600px) {
+    header h1 { font-size: 1.5rem; }
+    main { padding: 1.5rem 1rem; }
+    .content-section { padding: 1.25rem; }
+    nav { padding: 0.75rem 1rem; }
+    .hamburger { display: block; }
+    .nav-links { display: none; width: 100%; flex-direction: column; gap: 0.75rem; padding-top: 0.75rem; }
+    .nav-links.open { display: flex; }
+    .cta-box .cta-links { flex-direction: column; gap: 0.75rem; }
+    .content-section table { font-size: 0.8rem; }
+    .content-section th, .content-section td { padding: 0.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav role="navigation" aria-label="Site navigation">
+  <a href="/" class="site-name">dischargebar.org</a>
+  <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" onclick="var n=this.nextElementSibling;var open=n.classList.toggle('open');this.setAttribute('aria-expanded',open);">&#9776;</button>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/all-bars-chart.html">All Bars</a>
+    <a href="/chapter-7-to-7.html">Ch.7 to Ch.7</a>
+    <a href="/chapter-7-to-13.html">Ch.7 to Ch.13</a>
+    <a href="/chapter-13-to-13.html">Ch.13 to Ch.13</a>
+    <a href="/chapter-13-to-7.html">Ch.13 to Ch.7</a>
+    <a href="/calculator.html" class="active">Calculator</a>
+  </div>
+</nav>
+
+<header>
+  <h1><span class="accent">Discharge Bar</span> Calculator</h1>
+  <p class="subtitle">When can you file again? Enter your prior case details to find out.</p>
+</header>
+
+<div class="breadcrumb" aria-label="Breadcrumb">
+  <a href="https://1328f.com/">Network</a> &rsaquo; <a href="/">Discharge Bars</a> &rsaquo; Calculator
+</div>
+
+<main id="main-content">
+
+  <div class="content-section">
+    <h2>Calculate Your Earliest Eligible Date</h2>
+    <p>Enter the details of your most recent bankruptcy case to see when you become eligible for a new discharge under each chapter.</p>
+
+    <div style="margin:1.5rem 0">
+      <label for="prior-date" style="display:block;color:var(--text-muted);font-size:0.9rem;margin-bottom:0.25rem">Prior case filing date:</label>
+      <input type="date" id="prior-date" style="background:#21262d;border:1px solid var(--border);color:var(--text);padding:0.5rem 0.75rem;border-radius:6px;font-size:1rem;width:100%;max-width:300px">
+    </div>
+
+    <div style="margin:1.5rem 0">
+      <label for="prior-chapter" style="display:block;color:var(--text-muted);font-size:0.9rem;margin-bottom:0.25rem">Prior case chapter:</label>
+      <select id="prior-chapter" style="background:#21262d;border:1px solid var(--border);color:var(--text);padding:0.5rem 0.75rem;border-radius:6px;font-size:1rem;width:100%;max-width:300px">
+        <option value="">Select...</option>
+        <option value="7">Chapter 7</option>
+        <option value="13">Chapter 13</option>
+      </select>
+    </div>
+
+    <div style="margin:1.5rem 0">
+      <label for="prior-discharge" style="display:block;color:var(--text-muted);font-size:0.9rem;margin-bottom:0.25rem">Did you receive a discharge?</label>
+      <select id="prior-discharge" style="background:#21262d;border:1px solid var(--border);color:var(--text);padding:0.5rem 0.75rem;border-radius:6px;font-size:1rem;width:100%;max-width:300px">
+        <option value="">Select...</option>
+        <option value="yes">Yes -- received discharge</option>
+        <option value="no">No -- case was dismissed</option>
+      </select>
+    </div>
+
+    <button onclick="calculate()" style="background:#238636;color:#fff;border:none;padding:0.6rem 1.5rem;border-radius:6px;font-weight:600;font-size:0.95rem;cursor:pointer;margin-top:0.5rem">Calculate</button>
+
+    <div id="results" style="display:none;margin-top:1.5rem">
+      <h3 style="color:#f0f6fc;margin-bottom:1rem">Your Earliest Eligible Dates</h3>
+      <div id="results-content"></div>
+    </div>
+  </div>
+
+  <script>
+  function calculate() {
+    var dateInput = document.getElementById('prior-date').value;
+    var chapter = document.getElementById('prior-chapter').value;
+    var discharged = document.getElementById('prior-discharge').value;
+    var results = document.getElementById('results');
+    var content = document.getElementById('results-content');
+
+    if (!dateInput || !chapter || !discharged) {
+      content.innerHTML = '<p style="color:var(--red)">Please fill in all fields.</p>';
+      results.style.display = 'block';
+      return;
+    }
+
+    var filed = new Date(dateInput + 'T00:00:00');
+    var today = new Date();
+    today.setHours(0,0,0,0);
+    var html = '';
+
+    if (discharged === 'no') {
+      html += '<div class="green-box"><p><strong>No discharge bar applies.</strong> Since your prior case was dismissed without a discharge, the discharge bars under Sections 727(a)(8), 727(a)(9), and 1328(f) do not apply.</p>';
+      html += '<p>However, you may face a <strong>180-day filing bar</strong> under <a href="https://109g.org">Section 109(g)</a> if the dismissal was due to willful failure to comply with court orders or a voluntary dismissal after a relief from stay motion.</p>';
+      var bar109g = new Date(filed);
+      bar109g.setDate(bar109g.getDate() + 180);
+      html += '<p><strong>109(g) bar expires:</strong> ' + bar109g.toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'}) + '</p></div>';
+    } else {
+      function addYears(d, y) { var r = new Date(d); r.setFullYear(r.getFullYear() + y); return r; }
+      function fmt(d) { return d.toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'}); }
+      function status(d) {
+        if (d <= today) return '<span style="color:var(--green);font-weight:600">ELIGIBLE NOW</span>';
+        return '<span style="color:var(--yellow);font-weight:600">' + fmt(d) + '</span>';
+      }
+
+      if (chapter === '7') {
+        var ch7date = addYears(filed, 8);
+        var ch13date = addYears(filed, 4);
+        html += '<table style="width:100%;border-collapse:collapse;font-size:0.95rem">';
+        html += '<tr><td style="padding:0.6rem;border-bottom:1px solid var(--border)"><strong>New Chapter 7 discharge</strong><br><span style="color:var(--text-muted);font-size:0.85rem">727(a)(8) -- 8 years</span></td><td style="padding:0.6rem;border-bottom:1px solid var(--border)">' + status(ch7date) + '</td></tr>';
+        html += '<tr><td style="padding:0.6rem;border-bottom:1px solid var(--border)"><strong>New Chapter 13 discharge</strong><br><span style="color:var(--text-muted);font-size:0.85rem">1328(f)(1) -- 4 years</span></td><td style="padding:0.6rem;border-bottom:1px solid var(--border)">' + status(ch13date) + '</td></tr>';
+        html += '</table>';
+      } else {
+        var ch7date = addYears(filed, 6);
+        var ch13date = addYears(filed, 2);
+        html += '<table style="width:100%;border-collapse:collapse;font-size:0.95rem">';
+        html += '<tr><td style="padding:0.6rem;border-bottom:1px solid var(--border)"><strong>New Chapter 7 discharge</strong><br><span style="color:var(--text-muted);font-size:0.85rem">727(a)(9) -- 6 years*</span></td><td style="padding:0.6rem;border-bottom:1px solid var(--border)">' + status(ch7date) + '</td></tr>';
+        html += '<tr><td style="padding:0.6rem;border-bottom:1px solid var(--border)"><strong>New Chapter 13 discharge</strong><br><span style="color:var(--text-muted);font-size:0.85rem">1328(f)(2) -- 2 years</span></td><td style="padding:0.6rem;border-bottom:1px solid var(--border)">' + status(ch13date) + '</td></tr>';
+        html += '</table>';
+        html += '<p style="color:var(--text-muted);font-size:0.85rem;margin-top:0.75rem">*The 6-year bar under 727(a)(9) has exceptions: it does not apply if you paid 70%+ of unsecured claims, or if the plan was proposed in good faith and was your best effort. <a href="/chapter-13-to-7.html">Learn more</a>.</p>';
+      }
+    }
+
+    content.innerHTML = html;
+    results.style.display = 'block';
+  }
+  </script>
+
+  <div class="content-section">
+    <h2>How This Calculator Works</h2>
+    <p>This calculator applies the discharge bar provisions of the Bankruptcy Code:</p>
+    <ul>
+      <li><strong>Section 727(a)(8)</strong> -- 8-year bar: Chapter 7 to Chapter 7</li>
+      <li><strong>Section 727(a)(9)</strong> -- 6-year bar: Chapter 13 to Chapter 7 (with exceptions)</li>
+      <li><strong>Section 1328(f)(1)</strong> -- 4-year bar: Chapter 7 to Chapter 13</li>
+      <li><strong>Section 1328(f)(2)</strong> -- 2-year bar: Chapter 13 to Chapter 13</li>
+      <li><strong>Section 109(g)</strong> -- 180-day filing bar after certain dismissals</li>
+    </ul>
+    <p>All periods are measured from <strong>filing date to filing date</strong>. This calculator runs entirely in your browser -- no data is sent to any server.</p>
+  </div>
+
+  <div class="cta-box">
+    <h3>Need More Detail?</h3>
+    <p>The full screener at 1328f.com checks additional factors including prior case lookups and district-specific data.</p>
+    <div class="cta-links">
+      <a href="https://1328f.com" class="primary-btn">Full Discharge Screener</a>
+      <a href="/all-bars-chart.html" class="secondary-btn">All Bars Chart</a>
+    </div>
+  </div>
+
+  <div style="background:#161b22;border:1px solid #30363d;border-radius:6px;padding:1rem 1.5rem;max-width:700px;margin:2rem auto">
+    <p style="color:#f0f6fc;font-weight:600;margin-bottom:0.5rem">Related Resources</p>
+    <p style="color:#9eaab6;font-size:0.9rem;margin-bottom:0.25rem"><a href="https://1328f.com" style="color:#58a6ff">1328f.com</a> -- Full discharge eligibility screener with case lookup</p>
+    <p style="color:#9eaab6;font-size:0.9rem;margin-bottom:0.25rem"><a href="https://727a8.com" style="color:#58a6ff">727a8.com</a> -- Chapter 7 discharge bar deep dive</p>
+    <p style="color:#9eaab6;font-size:0.9rem;margin-bottom:0.25rem"><a href="https://section1328.org" style="color:#58a6ff">section1328.org</a> -- Chapter 13 discharge rules</p>
+    <p style="color:#9eaab6;font-size:0.9rem;margin-bottom:0"><a href="https://109g.org" style="color:#58a6ff">109g.org</a> -- The 180-day filing bar</p>
+  </div>
+
+</main>
+
+<footer class="network-footer" role="contentinfo">
+  <p><strong>Part of the Open Bankruptcy Project</strong></p>
+  <p>Real information, no strings.</p>
+  <div class="links">
+    <a href="https://1328f.com">1328f.com</a>
+    <a href="https://727a8.com">727a8.com</a>
+    <a href="https://section1328.org">section1328.org</a>
+    <a href="https://109g.org">109g.org</a>
+    <a href="https://serialfiler.org">serialfiler.org</a>
+    <a href="https://ko-fi.com/ilikemath9999">Ko-fi</a>
+    <a href="https://github.com/ilikemath9999/bankruptcy-discharge-screener">GitHub</a>
+  </div>
+  <p class="disclaimer">This site provides general information only and does not constitute legal advice. No attorney-client relationship is created. Consult a licensed attorney for advice on your specific situation.<br>A project of the <strong>Open Bankruptcy Project</strong>, a 501(c)(3) nonprofit (determination pending).</p>
+</footer>
+<div style="background:#161b22;border:1px solid #30363d;border-radius:6px;padding:1.5rem;text-align:center;max-width:900px;margin:2rem auto 0">
+  <p style="color:#f0f6fc;font-size:1.1rem;font-weight:600;margin-bottom:0.25rem">PACER cases made free through RECAP: <span id="recap-count" style="color:#58a6ff">0</span> of 37.9 million</p>
+  <p style="color:#9eaab6;font-size:0.85rem;margin-bottom:0.75rem">Every document we access becomes permanently free for the next researcher, attorney, or debtor.</p>
+  <div style="background:#21262d;border-radius:6px;height:22px;overflow:hidden;margin:0.75rem auto;max-width:400px"><div id="recap-bar" style="background:linear-gradient(90deg,#238636,#2ea043);height:100%;width:0%;border-radius:6px;min-width:2px"></div></div>
+  <p style="margin-bottom:0.25rem"><span id="recap-donated" style="color:#58a6ff;font-size:1.2rem;font-weight:700">$0</span> <span style="color:#9eaab6">of</span> <span style="color:#f0f6fc;font-size:1.2rem;font-weight:700">$5,000</span> <span style="color:#9eaab6">Q1 PACER research goal</span></p>
+  <p style="color:#9eaab6;font-size:0.8rem;margin-bottom:0.75rem">1,500+ hours. No grants, no institutional backing.</p>
+  <a href="https://1328f.org/support/" style="display:inline-block;background:#238636;color:#fff;padding:0.5rem 1.5rem;border-radius:6px;font-weight:600;font-size:0.9rem;text-decoration:none">Fund this research</a>
+</div>
+<script>fetch("https://1328f.com/data/recap-count.json").then(function(r){return r.json()}).then(function(d){var e=document.getElementById("recap-count");if(e&&d.count!==undefined)e.textContent=d.count.toLocaleString();var b=document.getElementById("recap-bar");if(b&&d.count)b.style.width=Math.min(100,d.count/37900000*100).toFixed(4)+"%";var dn=document.getElementById("recap-donated");if(dn&&d.donated!==undefined)dn.textContent="$"+d.donated.toLocaleString()}).catch(function(){})</script>
+
+<script src="/btn-engage.js"></script>
+<div style="background:#161b22;border:1px solid #30363d;border-radius:6px;padding:1rem 1.5rem;text-align:center;max-width:700px;margin:2rem auto">
+<p style="color:#9eaab6;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.25rem">Federal Rules Committee</p>
+<p style="color:#e6edf3;font-size:0.95rem;margin-bottom:0.25rem">This research supports <a href="https://www.uscourts.gov/forms-rules/records-rules-committees/rules-suggestions" style="color:#58a6ff">Suggestion 26-BK-3</a> to the Advisory Committee on Bankruptcy Rules</p>
+<p style="color:#9eaab6;font-size:0.8rem;margin:0">Proposing automated Section 1328(f) discharge bar screening in federal bankruptcy courts</p>
+</div>
+</body>
+</html>

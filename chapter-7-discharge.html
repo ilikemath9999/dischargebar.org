@@ -119,22 +119,17 @@
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 </head>
 <body>
-<nav id="site-nav" aria-label="Site navigation">
-  <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">&#9776; Menu</button>
-  <div class="nav-links" id="nav-links">
-    <strong class="nav-label">dischargebar.org:</strong>
+<nav role="navigation" aria-label="Site navigation">
+  <a href="/" class="site-name">dischargebar.org</a>
+  <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" onclick="var n=this.nextElementSibling;var open=n.classList.toggle('open');this.setAttribute('aria-expanded',open);">&#9776;</button>
+  <div class="nav-links">
     <a href="/">Home</a>
-    <a href="/chapter-7-discharge.html" aria-current="page">Chapter 7</a>
-    <a href="/chapter-13-discharge.html">Chapter 13</a>
-    <a href="/nondischargeable-debts.html">Nondischargeable Debts</a>
-    <a href="https://bankruptcyfreshstart.org">After Discharge</a>
-    <a href="#">Revocation</a>
-    <span class="sep">|</span>
-    <strong class="nav-label">Network:</strong>
-    <a href="https://1328f.com/">1328f.com</a>
-    <a href="https://1328f.com/check.html">Screener</a>
-    <a href="https://1328f.com/explainer.html">1328(f) Explained</a>
-    <a href="https://1328f.org/">1328f.org</a>
+    <a href="/all-bars-chart.html">All Bars</a>
+    <a href="/chapter-7-to-7.html">Ch.7 to Ch.7</a>
+    <a href="/chapter-7-to-13.html">Ch.7 to Ch.13</a>
+    <a href="/chapter-13-to-13.html">Ch.13 to Ch.13</a>
+    <a href="/chapter-13-to-7.html">Ch.13 to Ch.7</a>
+    <a href="/calculator.html">Calculator</a>
   </div>
 </nav>
 <script>document.addEventListener('DOMContentLoaded',function(){var b=document.querySelector('.nav-toggle');if(b)b.addEventListener('click',function(){var l=document.querySelector('.nav-links');l.classList.toggle('open');b.setAttribute('aria-expanded',l.classList.contains('open'))})});</script>
